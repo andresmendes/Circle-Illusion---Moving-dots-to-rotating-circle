@@ -2,7 +2,7 @@
 # Circle Illusion - Moving dots to rotating circle
 Animation of a rotating circle that emerges from a set of dots moving harmonically in straight lines with different orientations.
 
-Watch animation on YouTube: https://youtu.be/AAlnX0cjWF4
+Watch animation on YouTube: https://youtu.be/i68mOI-aCwA
 
 
-![GitHub Logo](https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/9698b45d-e7d5-4e39-ae49-197822deedd1/025c88da-85e1-4cb1-bb38-52e7ffea0b1a/images/1618589228.png)
+![Logo](https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/9698b45d-e7d5-4e39-ae49-197822deedd1/13881713-5cca-40e5-8444-11d40b45f8dd/images/1620923636.png)
