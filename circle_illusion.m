@@ -33,8 +33,9 @@ end
 %% Animation
 
 figure
-hold on ; grid on ; axis equal
+hold on ; grid on ; box on ; axis equal
 set(gca,'xlim',[-1.1 1.1],'ylim',[-1.1 1.1])
+set(gca,'XTick',[],'YTick',[])
 
 % Create and open video writer object
 v = VideoWriter('circle_illusion.avi');
@@ -44,7 +45,10 @@ open(v);
 % Generating frames
 for i=1:length(t)
     cla
-    plot(px(i,:),py(i,:),'ro')
+    for j=1:N
+        plot([-A*cos(j*th) A*cos(j*th)],[-A*sin(j*th) A*sin(j*th)],':','Color',[100 100 100]/255)
+    end
+    plot(px(i,:),py(i,:),'ro','MarkerFaceColor','r')
     frame = getframe(gcf);
     writeVideo(v,frame);
 end
