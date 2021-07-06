@@ -8,9 +8,13 @@ clear ; close all ; clc
 
 %% Parameters
 
-tf  = 30;                       % Final time                [s]
-dt  = 30;                       % Frame rate                [fps]
-t   = linspace(0,tf,tf*dt);     % Time                      [s]
+% Video
+tf  = 30;                       % Final time                    [s]
+fR  = 30;                       % Frame rate                    [fps]
+dt  = 1/fR;                     % Time resolution               [s]
+t   = linspace(0,tf,tf*fR);     % Time                          [s]
+
+% Dots
 T   = 10;                       % Oscillation period        [s]
 f   = 1/T;                      % Oscillation frequency     [Hz]
 A   = 1;                        % Amplitude                 [m]
@@ -33,13 +37,17 @@ end
 %% Animation
 
 figure
+% set(gcf,'Position',[50 50 1280 720]) % 720p
+% set(gcf,'Position',[50 50 854 480]) % 480p
+
 hold on ; grid on ; box on ; axis equal
 set(gca,'xlim',[-1.1 1.1],'ylim',[-1.1 1.1])
 set(gca,'XTick',[],'YTick',[])
 
 % Create and open video writer object
-v = VideoWriter('circle_illusion.avi');
-v.Quality = 100;
+v = VideoWriter('circle_illusion.mp4','MPEG-4');
+v.Quality   = 100;
+v.FrameRate = fR;
 open(v);
 
 % Generating frames
