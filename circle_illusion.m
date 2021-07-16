@@ -37,8 +37,9 @@ end
 %% Animation
 
 figure
-% set(gcf,'Position',[50 50 1280 720]) % 720p
-% set(gcf,'Position',[50 50 854 480]) % 480p
+% set(gcf,'Position',[50 50 1280 720]) % YouTube: 720p
+% set(gcf,'Position',[50 50 854 480]) % YouTube: 480p
+set(gcf,'Position',[50 50 640 640]) % Instagram
 
 hold on ; grid on ; box on ; axis equal
 set(gca,'xlim',[-1.1 1.1],'ylim',[-1.1 1.1])
