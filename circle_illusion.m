@@ -39,7 +39,7 @@ end
 figure
 % set(gcf,'Position',[50 50 1280 720]) % YouTube: 720p
 % set(gcf,'Position',[50 50 854 480]) % YouTube: 480p
-set(gcf,'Position',[50 50 640 640]) % Instagram
+set(gcf,'Position',[50 50 640 640]) % Social
 
 hold on ; grid on ; box on ; axis equal
 set(gca,'xlim',[-1.1 1.1],'ylim',[-1.1 1.1])
