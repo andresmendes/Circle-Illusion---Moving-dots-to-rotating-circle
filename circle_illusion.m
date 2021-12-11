@@ -15,12 +15,12 @@ dt  = 1/fR;                     % Time resolution               [s]
 t   = linspace(0,tf,tf*fR);     % Time                          [s]
 
 % Dots
-T   = 10;                       % Oscillation period        [s]
-f   = 1/T;                      % Oscillation frequency     [Hz]
-A   = 1;                        % Amplitude                 [m]
+T   = 10;                       % Oscillation period            [s]
+f   = 1/T;                      % Oscillation frequency         [Hz]
+A   = 1;                        % Amplitude                     [m]
 N   = 8;                        % Number of dots
-ph  = pi/N;                     % Phase                     [rad]
-th  = pi/N;                     % Orientation               [rad]
+ph  = pi/N;                     % Phase                         [rad]
+th  = pi/N;                     % Orientation                   [rad]
 
 %% Defining motion
 
@@ -37,13 +37,15 @@ end
 %% Animation
 
 figure
-% set(gcf,'Position',[50 50 1280 720]) % YouTube: 720p
-% set(gcf,'Position',[50 50 854 480]) % YouTube: 480p
-set(gcf,'Position',[50 50 640 640]) % Social
+% set(gcf,'Position',[50 50 1280 720])  % YouTube: 720p
+% set(gcf,'Position',[50 50 854 480])   % YouTube: 480p
+set(gcf,'Position',[50 50 640 640])     % Social
 
 hold on ; grid on ; box on ; axis equal
 set(gca,'xlim',[-1.1 1.1],'ylim',[-1.1 1.1])
 set(gca,'XTick',[],'YTick',[])
+set(gca,'FontName','Verdana','FontSize',22)
+title('Circle Illusion')
 
 % Create and open video writer object
 v = VideoWriter('circle_illusion.mp4','MPEG-4');
@@ -55,9 +57,9 @@ open(v);
 for i=1:length(t)
     cla
     for j=1:N
-        plot([-A*cos(j*th) A*cos(j*th)],[-A*sin(j*th) A*sin(j*th)],':','Color',[100 100 100]/255)
+        plot([-A*cos(j*th) A*cos(j*th)],[-A*sin(j*th) A*sin(j*th)],':','Color',[100 100 100]/255,'LineWidth',1.5)
     end
-    plot(px(i,:),py(i,:),'ro','MarkerFaceColor','r')
+    plot(px(i,:),py(i,:),'ro','MarkerFaceColor','r','MarkerEdgeColor','k','MarkerSize',15)
     frame = getframe(gcf);
     writeVideo(v,frame);
 end
